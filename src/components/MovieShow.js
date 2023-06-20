@@ -1,15 +1,31 @@
-// ./src/components/MovieShow.js
 import React from "react";
 import { useParams } from "react-router-dom";
+import ReactPlayer from "react-player/youtube";
 
-function MovieShow({movies}) {
-    const params = useParams();
-  console.log(params);
+function MovieShow({ movies }) {
+  const params = useParams();
+
   return (
     <div>
-      {/* And here we access the `movieId` stored in `params` to render 
-        information about the selected movie */}
       <h3>{movies[params.movieId].title}</h3>
+
+      <p>This is a description of the card.</p>
+
+      <div style={{ display: "flex", alignContent: "center" }}>
+        {/* <div style={{ flex: 1 }}>
+          <img
+            style={{ width: "150px" }}
+            src={movies[params.movieId].imageUrl}
+            alt="Movie Poster"
+          />
+        </div> */}
+
+        <ReactPlayer
+          style={{ width: "100%", height: "auto" }}
+          url={movies[params.movieId].trailer}
+          controls={true}
+        />
+      </div>
     </div>
   );
 }

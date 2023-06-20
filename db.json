@@ -1,0 +1,25 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "No Hard Feelings",
+      "imageUrl": "https://filmdb.landmarkcinemas.com/FilmImages/22/1/124505/NoHardFeelingsOfficialPoster.jpg",
+      "trailer": "https://youtu.be/P15S6ND8kbQ",
+      "ismyfav": "false"
+    },
+    {
+      "title": "Blackening, The",
+      "imageUrl": "https://filmdb.landmarkcinemas.com/FilmImages/22/1/124630/TheBlackeningOfficialPoster.jpg",
+      "trailer": "https://youtu.be/moiRCJR4ToY",
+      "id": 2,
+      "ismyfav": "false"
+    },
+    {
+      "title": "The Final Girls",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/c/c8/The_Final_Girls_poster.jpg",
+      "trailer": "https://youtu.be/l4-FrriU4Uk",
+      "id": 3,
+      "ismyfav": "false"
+    }
+  ]
+}

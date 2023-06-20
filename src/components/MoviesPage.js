@@ -2,26 +2,20 @@ import React from "react";
 import { Route, useRouteMatch } from "react-router-dom";
 import MovieShow from "./MovieShow";
 import MoviesList from "./MoviesList";
+import { Container, Card } from "semantic-ui-react";
 
-function MoviesPage({ movies }) {
-  // useRouteMatch returns a special object with information about
-  // the currently matched route
+function MoviesPage({ movies, addTomyList }) {
   const match = useRouteMatch();
-  console.log("match",match);
   return (
-    <div>
-      <MoviesList movies={movies} />
-       {/* Adding code to show a message to the user to select a movie if they haven't yet */}
-      <Route exact path={match.url}>
-        <h3>Choose a movie from the list above</h3>
-      </Route>
-       {/* 
-        we can use the current URL from the `match` object as part of the path;
-        this will generate a url like "/movies/:movieId"
-      */}
-      <Route path={`${match.url}/:movieId`}>
-      <MovieShow movies={movies} />
-      </Route>
+    <div style={{ display: "flex" }}>
+      <div style={{ flex: 1 }}>
+        <MoviesList movies={movies} addTomyList={addTomyList} />
+      </div>
+      <div style={{ flex: 1 }}>
+        <Route path={`${match.url}/:movieId`}>
+          <MovieShow movies={movies} />
+        </Route>
+      </div>
     </div>
   );
 }
